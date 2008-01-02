@@ -6,6 +6,7 @@ License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Group: System/Base
 URL:  http://www.freestandards.org/en/LSB
+BuildRoot: %{_tmppath}/%{name}-root
 ExclusiveArch: %{ix86} x86_64 ppc
 
 %define lsbver 3.1
