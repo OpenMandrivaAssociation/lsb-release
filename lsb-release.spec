@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 8
+Release: %mkrel 9
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Group: System/Base
@@ -47,9 +47,9 @@ mkdir -p %buildroot/%{_sysconfdir}
 cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=lsb-%{lsbver}-%arch_name:lsb-%{lsbver}-noarch
 DISTRIB_ID=MandrivaLinux
-DISTRIB_RELEASE=2008.0
-DISTRIB_CODENAME=copernic
-DISTRIB_DESCRIPTION="%{distribution} 2008.0"
+DISTRIB_RELEASE=2008.1
+DISTRIB_CODENAME=aceras
+DISTRIB_DESCRIPTION="%{distribution} 2008.1"
 EOF
 
 %clean
@@ -62,4 +62,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/lsb_release.1*
 %config(noreplace) %{_sysconfdir}/%{name}
 %dir %{_sysconfdir}/%{name}.d
-
