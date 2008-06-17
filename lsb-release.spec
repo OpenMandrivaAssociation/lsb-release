@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 10
+Release: %mkrel 11
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Group: System/Base
