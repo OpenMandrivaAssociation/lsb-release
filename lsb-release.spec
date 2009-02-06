@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 16
+Release: %mkrel 17
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Group: System/Base
@@ -47,9 +47,9 @@ mkdir -p %buildroot/%{_sysconfdir}
 cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=lsb-%{lsbver}-%arch_name:lsb-%{lsbver}-noarch
 DISTRIB_ID=MandrivaLinux
-DISTRIB_RELEASE=2009.0
-DISTRIB_CODENAME=zarapha
-DISTRIB_DESCRIPTION="%{distribution} 2009.0"
+DISTRIB_RELEASE=2009.1
+DISTRIB_CODENAME=unavailable
+DISTRIB_DESCRIPTION="%{distribution} 2009.1"
 EOF
 
 %clean
