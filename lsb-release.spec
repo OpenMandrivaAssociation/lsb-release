@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 21
+Release: %mkrel 22
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Group: System/Base
@@ -9,7 +9,7 @@ URL:  http://www.freestandards.org/en/LSB
 BuildRoot: %{_tmppath}/%{name}-root
 ExclusiveArch: %{ix86} x86_64 ppc
 
-%define lsbver 3.1
+%define lsbver 4.0
 %define arch_name ia32 
 
 %ifarch x86_64
@@ -48,7 +48,7 @@ cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=lsb-%{lsbver}-%arch_name:lsb-%{lsbver}-noarch
 DISTRIB_ID=MandrivaLinux
 DISTRIB_RELEASE=2010.0
-DISTRIB_CODENAME=ectoplasme
+DISTRIB_CODENAME=adelie
 DISTRIB_DESCRIPTION="%{distribution} 2010.0"
 EOF
 
