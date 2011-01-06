@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 28
+Release: %mkrel 29
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Group: System/Base
@@ -52,6 +52,12 @@ DISTRIB_CODENAME=
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
+mkdir -p %buildroot/usr/bin
+pushd %buildroot/usr/bin
+ln -sf /bin/lsb_release lsb_release
+popd
+
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -59,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README
 /bin/lsb_release
+%_bindir/lsb_release
 %{_mandir}/man1/lsb_release.1*
 %config(noreplace) %{_sysconfdir}/%{name}
 %dir %{_sysconfdir}/%{name}.d
