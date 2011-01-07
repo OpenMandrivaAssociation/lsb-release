@@ -48,7 +48,7 @@ cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=lsb-%{lsbver}-%arch_name:lsb-%{lsbver}-noarch
 DISTRIB_ID=MandrivaLinux
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=
+DISTRIB_CODENAME=turtle
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
