@@ -1,23 +1,13 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 30
+Release: %mkrel 33
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
+Patch0: lsb-release-%{version}-no-support.patch
 Group: System/Base
-URL:  http://www.freestandards.org/en/LSB
+URL: http://bzr.linuxfoundation.org/loggerhead/lsb/devel/si/files/head:/lsb_release/ 
 BuildRoot: %{_tmppath}/%{name}-root
-ExclusiveArch: %{ix86} x86_64 ppc
-
-%define lsbver 4.0
-%define arch_name ia32 
-
-%ifarch x86_64
-%define arch_name amd64 
-%endif
-%ifarch %{ppc}
-%define arch_name ppc 
-%endif
 
 %description
 LSB version query program
@@ -34,18 +24,19 @@ the distribution.
 
 %prep
 
-%setup
+%setup -q
+%patch0 -p1 -b .no-support
 
 %build
-rm -rf $RPM_BUILD_ROOT
 make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 make prefix=%buildroot mandir=%buildroot/%{_mandir} install 
 mkdir -p %buildroot/%{_sysconfdir}/%{name}.d
 mkdir -p %buildroot/%{_sysconfdir}
 cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
-LSB_VERSION=lsb-%{lsbver}-%arch_name:lsb-%{lsbver}-noarch
+LSB_VERSION=
 DISTRIB_ID=MandrivaLinux
 DISTRIB_RELEASE=%{product_version}
 DISTRIB_CODENAME=turtle
