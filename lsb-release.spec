@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: %mkrel 35
+Release: %mkrel 36
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Patch0: lsb-release-%{version}-no-support.patch
@@ -39,7 +39,7 @@ cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID=MandrivaLinux
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=squirrel
+DISTRIB_CODENAME=gwiñver
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
