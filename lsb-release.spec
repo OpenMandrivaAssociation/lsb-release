@@ -31,7 +31,7 @@ the distribution.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 make prefix=%buildroot mandir=%buildroot/%{_mandir} install 
 mkdir -p %buildroot/%{_sysconfdir}/%{name}.d
 mkdir -p %buildroot/%{_sysconfdir}
@@ -50,7 +50,7 @@ popd
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
