@@ -9,6 +9,8 @@ Group: System/Base
 URL: http://bzr.linuxfoundation.org/loggerhead/lsb/devel/si/files/head:/lsb_release/ 
 BuildRoot: %{_tmppath}/%{name}-root
 
+%define debug_package %{nil}
+
 %description
 LSB version query program
 
