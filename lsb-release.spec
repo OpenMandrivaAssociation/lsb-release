@@ -39,10 +39,10 @@ mkdir -p %buildroot/%{_sysconfdir}/%{name}.d
 mkdir -p %buildroot/%{_sysconfdir}
 cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
-DISTRIB_ID=MandrivaLinux
+DISTRIB_ID=OpenMandrivaLinux
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=turtle
-DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
+DISTRIB_CODENAME=oxygen
+DISTRIB_DESCRIPTION="%{distribution} %{product_version} alpha"
 EOF
 
 mkdir -p %buildroot/usr/bin
