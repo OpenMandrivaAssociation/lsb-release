@@ -7,7 +7,6 @@ Source: lsb-release-%{version}.tar.bz2
 Patch0: lsb-release-%{version}-no-support.patch
 Group: System/Base
 URL: http://bzr.linuxfoundation.org/loggerhead/lsb/devel/si/files/head:/lsb_release/ 
-BuildRoot: %{_tmppath}/%{name}-root
 
 %define debug_package %{nil}
 
@@ -33,11 +32,10 @@ the distribution.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make prefix=%buildroot mandir=%buildroot/%{_mandir} install 
-mkdir -p %buildroot/%{_sysconfdir}/%{name}.d
-mkdir -p %buildroot/%{_sysconfdir}
-cat > %buildroot/%{_sysconfdir}/lsb-release << EOF
+make prefix=%{buildroot} mandir=%{buildroot}/%{_mandir} install 
+mkdir -p %{buildroot}/%{_sysconfdir}/%{name}.d
+mkdir -p %{buildroot}/%{_sysconfdir}
+cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID=OpenMandrivaLinux
 DISTRIB_RELEASE=%{product_version}
@@ -45,17 +43,13 @@ DISTRIB_CODENAME=oxygen
 DISTRIB_DESCRIPTION="%{distribution} %{product_version} alpha"
 EOF
 
-mkdir -p %buildroot/usr/bin
-pushd %buildroot/usr/bin
+mkdir -p %{buildroot}/usr/bin
+pushd %{buildroot}/usr/bin
 ln -sf /bin/lsb_release lsb_release
 popd
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc README
 /bin/lsb_release
 %_bindir/lsb_release
@@ -170,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 + Revision: 152874
 - rebuild
 - rebuild
-- kill re-definition of %%buildroot on Pixel's request
+- kill re-definition of %%{buildroot} on Pixel's request
 
   + Olivier Blin <oblin@mandriva.com>
     - restore BuildRoot
