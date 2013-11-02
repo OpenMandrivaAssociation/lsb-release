@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: 37
+Release: 38
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Patch0: lsb-release-%{version}-no-support.patch
@@ -40,7 +40,7 @@ LSB_VERSION=
 DISTRIB_ID=OpenMandrivaLinux
 DISTRIB_RELEASE=%{product_version}
 DISTRIB_CODENAME=oxygen
-DISTRIB_DESCRIPTION="%{distribution} %{product_version} alpha"
+DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
 mkdir -p %{buildroot}/usr/bin
