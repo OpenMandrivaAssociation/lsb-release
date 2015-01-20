@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: 46
+Release: 47
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Patch0: lsb-release-%{version}-no-support.patch
@@ -35,11 +35,12 @@ make
 make prefix=%{buildroot} mandir=%{buildroot}/%{_mandir} install 
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}.d
 mkdir -p %{buildroot}/%{_sysconfdir}
+# set codename accordingly to https://wiki.openmandriva.org/en/Codename
 cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID=OpenMandrivaLinux
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=oxygen
+DISTRIB_CODENAME=Einsteinium
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
