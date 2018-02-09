@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: 50
+Release: 51
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Patch0: lsb-release-%{version}-no-support.patch
@@ -40,7 +40,7 @@ cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID=OpenMandrivaLinux
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=Einsteinium
+DISTRIB_CODENAME=Nitrogen
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
