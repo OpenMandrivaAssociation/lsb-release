@@ -1,7 +1,7 @@
 Summary: Linux Standard Base tools
 Name: lsb-release
 Version: 2.0
-Release: 52
+Release: 53
 License: GPL
 Source: lsb-release-%{version}.tar.bz2
 Patch0: lsb-release-%{version}-no-support.patch
