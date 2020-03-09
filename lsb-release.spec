@@ -25,8 +25,7 @@ the distribution.
 
 %prep
 
-%setup -q
-%patch0 -p1 -b .no-support
+%autosetup -p1
 
 %build
 make
@@ -45,10 +44,9 @@ DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
 mkdir -p %{buildroot}/usr/bin
-pushd %{buildroot}/usr/bin
+cd %{buildroot}/usr/bin
 ln -sf /bin/lsb_release lsb_release
-popd
-
+cd -
 
 %files
 %doc README
@@ -57,4 +55,3 @@ popd
 %{_mandir}/man1/lsb_release.1*
 %config(noreplace) %{_sysconfdir}/%{name}
 %dir %{_sysconfdir}/%{name}.d
-
