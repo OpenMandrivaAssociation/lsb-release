@@ -39,7 +39,7 @@ cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID=OpenMandrivaLinux
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=Argon
+DISTRIB_CODENAME=Nickel
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
