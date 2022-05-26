@@ -1,14 +1,16 @@
-Summary: Linux Standard Base tools
-Name: lsb-release
-Version: 2.0
-Release: 57
-License: GPL
-Source: lsb-release-%{version}.tar.bz2
-Patch0: lsb-release-%{version}-no-support.patch
-Group: System/Base
-URL: http://bzr.linuxfoundation.org/loggerhead/lsb/devel/si/files/head:/lsb_release/ 
-
 %define debug_package %{nil}
+
+Summary:	Linux Standard Base tools
+Name:		lsb-release
+Version:	3.2
+Release:	1
+License:	GPL
+Group:		System/Base
+URL:		https://github.com/thkukuk/lsb-release_os-release
+Source0:	https://github.com/thkukuk/lsb-release_os-release/archive/refs/tags/%{name}_os-release-%{version}.tar.gz
+Requires(pre):	filesystem
+BuildRequires:	distro-release
+BuildArch:	noarch
 
 %description
 LSB version query program
@@ -24,34 +26,28 @@ of the distribution along with an identifier of who produces
 the distribution.
 
 %prep
-
-%autosetup -p1
+%autosetup -p1 -n %{name}_os-release-%{version}
 
 %build
 make
 
 %install
-make prefix=%{buildroot} mandir=%{buildroot}/%{_mandir} install 
+%make_install INSTALL_ROOT=%{buildroot}%{_prefix}
+
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}.d
 mkdir -p %{buildroot}/%{_sysconfdir}
 # set codename accordingly to https://wiki.openmandriva.org/en/Codename
 cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
-DISTRIB_ID=OpenMandrivaLinux
+DISTRIB_ID="%{distribution}"
 DISTRIB_RELEASE=%{product_version}
 DISTRIB_CODENAME=Nickel
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
-mkdir -p %{buildroot}/usr/bin
-cd %{buildroot}/usr/bin
-ln -sf /bin/lsb_release lsb_release
-cd -
-
 %files
 %doc README
-/bin/lsb_release
-%_bindir/lsb_release
-%{_mandir}/man1/lsb_release.1*
+%{_bindir}/lsb*release
+%doc %{_mandir}/man1/lsb*.1*
 %config(noreplace) %{_sysconfdir}/%{name}
 %dir %{_sysconfdir}/%{name}.d
