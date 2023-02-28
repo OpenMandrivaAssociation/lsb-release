@@ -3,7 +3,7 @@
 Summary:	Linux Standard Base tools
 Name:		lsb-release
 Version:	3.2
-Release:	6
+Release:	7
 License:	GPL
 Group:		System/Base
 URL:		https://github.com/thkukuk/lsb-release_os-release
@@ -36,7 +36,7 @@ make
 
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}.d
 mkdir -p %{buildroot}/%{_sysconfdir}
-# set codename accordingly to https://wiki.openmandriva.org/en/Codename
+# set codename accordingly to https://wiki.openmandriva.org/en/policies/codename
 cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID="%{distribution}"
