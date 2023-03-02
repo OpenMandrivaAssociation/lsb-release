@@ -3,7 +3,7 @@
 Summary:	Linux Standard Base tools
 Name:		lsb-release
 Version:	3.2
-Release:	7
+Release:	9
 License:	GPL
 Group:		System/Base
 URL:		https://github.com/thkukuk/lsb-release_os-release
@@ -41,7 +41,7 @@ cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID="%{distribution}"
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=Nickel
+DISTRIB_CODENAME=ROME
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
