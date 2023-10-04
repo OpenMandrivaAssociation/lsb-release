@@ -41,7 +41,7 @@ cat > %{buildroot}/%{_sysconfdir}/lsb-release << EOF
 LSB_VERSION=
 DISTRIB_ID="%{distribution}"
 DISTRIB_RELEASE=%{product_version}
-DISTRIB_CODENAME=Nickel
+DISTRIB_CODENAME=Iodine
 DISTRIB_DESCRIPTION="%{distribution} %{product_version}"
 EOF
 
