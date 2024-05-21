@@ -3,7 +3,7 @@
 Summary:	Linux Standard Base tools
 Name:		lsb-release
 Version:	3.2
-Release:	19
+Release:	20
 License:	GPL
 Group:		System/Base
 URL:		https://github.com/thkukuk/lsb-release_os-release
