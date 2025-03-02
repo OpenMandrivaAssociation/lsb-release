@@ -2,14 +2,16 @@
 
 Summary:	Linux Standard Base tools
 Name:		lsb-release
-Version:	3.2
-Release:	30
+Version:	3.3
+Release:	1.2502
 License:	GPL
 Group:		System/Base
 URL:		https://github.com/thkukuk/lsb-release_os-release
 Source0:	https://github.com/thkukuk/lsb-release_os-release/archive/refs/tags/%{name}_os-release-%{version}.tar.gz
 Requires(pre):	filesystem
 BuildRequires:	distro-release
+# For getopt (which should probably move to util-linux-core)
+BuildRequires:	util-linux
 BuildArch:	noarch
 
 %description
