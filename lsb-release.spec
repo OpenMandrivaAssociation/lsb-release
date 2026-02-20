@@ -9,6 +9,7 @@ Group:		System/Base
 URL:		https://github.com/thkukuk/lsb-release_os-release
 Source0:	https://github.com/thkukuk/lsb-release_os-release/archive/refs/tags/%{name}_os-release-%{version}.tar.gz
 Requires(pre):	filesystem
+BuildRequires:	make
 BuildRequires:	distro-release
 # For getopt (which should probably move to util-linux-core)
 BuildRequires:	util-linux
